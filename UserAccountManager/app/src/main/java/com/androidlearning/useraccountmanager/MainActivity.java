@@ -28,10 +28,6 @@ public class MainActivity extends AppCompatActivity {
         GoToRegister = (Button) findViewById(R.id.GoToRegister);
         LogIn = (Button) findViewById(R.id.LogIn);
         GoToResetPassWord = (Button) findViewById(R.id.GoToResetPassWord);
-        Manager.users[0].UserName = "root";
-        Manager.users[0].PhoneNumber = "18888888888";
-        Manager.users[0].EmailAddress = "root@users.com";
-        Manager.users[0].PassWord = "123456789012";
     }
     private void setOnClickListener() {
         View.OnClickListener listener = new View.OnClickListener() {
