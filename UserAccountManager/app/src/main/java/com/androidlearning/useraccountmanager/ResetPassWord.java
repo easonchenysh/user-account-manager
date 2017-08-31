@@ -1,5 +1,4 @@
 package com.androidlearning.useraccountmanager;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -54,17 +53,16 @@ public class ResetPassWord extends AppCompatActivity {
         }
     }
     private void Back() {
-        Intent intent = new Intent(ResetPassWord.this,MainActivity.class);
-        startActivity(intent);
+        finish();
     }
     private void ResetPassWord() {
         String UserName = ResetPassWordUserName.getText().toString();
         String PhoneNumber = ResetPassWordPhoneNumber.getText().toString();
         String EmailAddress = ResetPassWordEmailAddress.getText().toString();
         String PassWord = ResetPassWordPassWord.getText().toString();
-        String regPW = "^\\w{7-11}$";
+        String regPW = "^[a-zA-Z0-9_-]*$";
         int i;
-        if (!Pattern.matches(PassWord,regPW)){
+        if (!Pattern.matches(regPW,PassWord)){
             Toast.makeText(this, "密码格式错误", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -78,9 +76,7 @@ public class ResetPassWord extends AppCompatActivity {
             return;
         }
         else {
-            Toast.makeText(this, "重设成功", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(ResetPassWord.this,MainActivity.class);
-            startActivity(intent);
+            Back();
         }
     }
 }

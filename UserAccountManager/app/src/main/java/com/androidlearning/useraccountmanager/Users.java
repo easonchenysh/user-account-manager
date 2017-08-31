@@ -49,14 +49,14 @@ public class Users {
         if (type.equals("UN") && data.equals(UserName)) {
             right = true;
         }
-        if (type.equals("PN") && data.equals(PhoneNumber)) {
-            right = true;
+        if (type.equals("PN") && !data.equals(PhoneNumber)) {
+            right = false;
         }
-        if (type.equals("EA") && data.equals(EmailAddress)) {
-            right = true;
+        if (type.equals("EA") && !data.equals(EmailAddress)) {
+            right = false;
         }
-        if (right && Password.equals(PassWord)) {
-           right = true;
+        if (right && !Password.equals(PassWord)) {
+           right = false;
         }
         return right;
     }

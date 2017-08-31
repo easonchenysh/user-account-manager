@@ -14,7 +14,7 @@
             <TextView
                 android:id="@+id/ShowTime"
                 android:width="368dp"
-                android:textSize="40dp"/>
+                android:textSize="22dp"/>
         </TableRow>
         <TableRow>
             <Button

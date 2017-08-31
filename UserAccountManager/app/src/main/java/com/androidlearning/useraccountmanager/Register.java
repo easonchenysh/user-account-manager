@@ -1,5 +1,4 @@
 package com.androidlearning.useraccountmanager;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -48,8 +47,7 @@ public class Register extends AppCompatActivity {
                 break;
             }
             case R.id.RegisterBack:{
-                Intent intent = new Intent(Register.this,MainActivity.class);
-                startActivity(intent);
+                finish();
                 break;
             }
         }
@@ -115,8 +113,6 @@ public class Register extends AppCompatActivity {
         }
         Manager.users[UserNumber].setData(UserName,PhoneNumber,EmailAddress,PassWord);
         Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
-//        Intent intent = new Intent(Register.this,MainActivity.class);
-//        startActivity(intent);
         finish();
     }
 }

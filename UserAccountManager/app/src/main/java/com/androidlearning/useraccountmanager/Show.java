@@ -1,5 +1,4 @@
 package com.androidlearning.useraccountmanager;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -34,7 +33,6 @@ public class Show extends AppCompatActivity {
         ShowTime.setText("登录时间:" + DT);
     }
     private void ButtonClicked(View v) {
-        Intent intent = new Intent(Show.this,MainActivity.class);
-        startActivity(intent);
+        finish();
     }
 }
