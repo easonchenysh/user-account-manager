@@ -1,7 +1,7 @@
 package com.androidlearning.useraccountmanager;
 
 public class Manager {
-    public static Users users[] = new Users[10];
+    public static Users users[] = new Users[11];
     public static boolean isInitialization = false;
     public static void Initialzation() {
         if (isInitialization == false) {
