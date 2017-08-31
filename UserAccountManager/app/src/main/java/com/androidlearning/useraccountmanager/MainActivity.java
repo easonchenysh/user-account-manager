@@ -8,8 +8,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 import java.util.regex.Pattern;
 
-import static com.androidlearning.useraccountmanager.Manager.users;
-
 public class MainActivity extends AppCompatActivity {
     private EditText LogInUserName;
     private EditText LogInPassWord;

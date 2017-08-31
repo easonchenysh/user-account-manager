@@ -108,13 +108,15 @@ public class Register extends AppCompatActivity {
         if (!ok) {
             return;
         }
+        UserNumber ++;
         if (UserNumber == 11) {
             Toast.makeText(this, "用户已满", Toast.LENGTH_SHORT).show();
             return;
         }
         Manager.users[UserNumber].setData(UserName,PhoneNumber,EmailAddress,PassWord);
         Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(Register.this,MainActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(Register.this,MainActivity.class);
+//        startActivity(intent);
+        finish();
     }
 }
