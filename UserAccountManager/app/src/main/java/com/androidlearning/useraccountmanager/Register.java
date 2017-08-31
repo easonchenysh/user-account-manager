@@ -101,7 +101,7 @@ public class Register extends AppCompatActivity {
                 Toast.makeText(this, "邮箱已注册", Toast.LENGTH_SHORT).show();
                 ok = false;
             }
-            if (Manager.users[UserNumber].CheckOccu()) {
+            if (!Manager.users[UserNumber].CheckOccu()) {
                 break;
             }
         }
@@ -112,6 +112,9 @@ public class Register extends AppCompatActivity {
             Toast.makeText(this, "用户已满", Toast.LENGTH_SHORT).show();
             return;
         }
-        Manager.users[UserNumber-1].setData(UserName,PhoneNumber,EmailAddress,PassWord);
+        Manager.users[UserNumber].setData(UserName,PhoneNumber,EmailAddress,PassWord);
+        Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(Register.this,MainActivity.class);
+        startActivity(intent);
     }
 }
