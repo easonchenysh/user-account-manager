@@ -83,10 +83,10 @@ public class MainActivity extends AppCompatActivity {
         if (!ok) {
             return;
         }
-        if (Pattern.matches(UserName,regPN)) {
+        if (Pattern.matches(regPN, UserName)) {
             Type = "PN";
         }
-        else if (Pattern.matches(UserName,regEA)) {
+        else if (Pattern.matches(regEA, UserName)) {
             Type = "EA";
         }
         else {
