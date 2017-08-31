@@ -8,8 +8,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 import java.util.regex.Pattern;
 
+import static com.androidlearning.useraccountmanager.Manager.users;
+
 public class MainActivity extends AppCompatActivity {
-    public static Users users[] = new Users[10];
     private EditText LogInUserName;
     private EditText LogInPassWord;
     private Button GoToRegister;
@@ -21,9 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         BuildControl();
         setOnClickListener();
-        for (int i = 0;i <= 10;i++) {
-            users[i] = new Users();
-        }
+        Manager.Initialzation();
     }
     private void BuildControl() {
         LogInUserName = (EditText) findViewById(R.id.LogInUserName);
@@ -31,10 +30,10 @@ public class MainActivity extends AppCompatActivity {
         GoToRegister = (Button) findViewById(R.id.GoToRegister);
         LogIn = (Button) findViewById(R.id.LogIn);
         GoToResetPassWord = (Button) findViewById(R.id.GoToResetPassWord);
-        users[0].UserName = "root";
-        users[0].PhoneNumber = "18888888888";
-        users[0].EmailAddress = "root@users.com";
-        users[0].PassWord = "123456789012";
+        Manager.users[0].UserName = "root";
+        Manager.users[0].PhoneNumber = "18888888888";
+        Manager.users[0].EmailAddress = "root@users.com";
+        Manager.users[0].PassWord = "123456789012";
     }
     private void setOnClickListener() {
         View.OnClickListener listener = new View.OnClickListener() {
@@ -89,11 +88,11 @@ public class MainActivity extends AppCompatActivity {
 //            UN不是UnKnow,而是UserName
         }
         for (i = 0;i <= 10;i++) {
-            if (users[i].isthis(Type,UserName) == true) {
+            if (Manager.users[i].isthis(Type,UserName) == true) {
                 break;
             }
         }
-        if (users[i].LogIn(Type,UserName,PassWord) == true) {
+        if (Manager.users[i].LogIn(Type,UserName,PassWord) == true) {
             if (i == 0) {
                 Intent intent = new Intent(MainActivity.this,Root.class);
                 startActivity(intent);

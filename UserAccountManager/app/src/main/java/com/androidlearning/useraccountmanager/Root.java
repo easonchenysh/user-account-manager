@@ -50,20 +50,20 @@ public class Root extends AppCompatActivity {
         });
     }
     private void ShowData() {
-        data0.setText("用户名:" + MainActivity.users[0].UserName + "  " + "手机号码:" + MainActivity.users[0].PhoneNumber + "   " + "电子邮箱" + MainActivity.users[0].EmailAddress + "    " + "密码:" + MainActivity.users[0].PassWord);
-        data1.setText("用户名:" + MainActivity.users[1].UserName + "  " + "手机号码:" + MainActivity.users[1].PhoneNumber + "   " + "电子邮箱" + MainActivity.users[1].EmailAddress + "    " + "密码:" + MainActivity.users[1].PassWord);
-        data2.setText("用户名:" + MainActivity.users[2].UserName + "  " + "手机号码:" + MainActivity.users[2].PhoneNumber + "   " + "电子邮箱" + MainActivity.users[2].EmailAddress + "    " + "密码:" + MainActivity.users[2].PassWord);
-        data3.setText("用户名:" + MainActivity.users[3].UserName + "  " + "手机号码:" + MainActivity.users[3].PhoneNumber + "   " + "电子邮箱" + MainActivity.users[3].EmailAddress + "    " + "密码:" + MainActivity.users[3].PassWord);
-        data4.setText("用户名:" + MainActivity.users[4].UserName + "  " + "手机号码:" + MainActivity.users[4].PhoneNumber + "   " + "电子邮箱" + MainActivity.users[4].EmailAddress + "    " + "密码:" + MainActivity.users[4].PassWord);
-        data5.setText("用户名:" + MainActivity.users[5].UserName + "  " + "手机号码:" + MainActivity.users[5].PhoneNumber + "   " + "电子邮箱" + MainActivity.users[5].EmailAddress + "    " + "密码:" + MainActivity.users[5].PassWord);
-        data6.setText("用户名:" + MainActivity.users[6].UserName + "  " + "手机号码:" + MainActivity.users[6].PhoneNumber + "   " + "电子邮箱" + MainActivity.users[6].EmailAddress + "    " + "密码:" + MainActivity.users[6].PassWord);
-        data7.setText("用户名:" + MainActivity.users[7].UserName + "  " + "手机号码:" + MainActivity.users[7].PhoneNumber + "   " + "电子邮箱" + MainActivity.users[7].EmailAddress + "    " + "密码:" + MainActivity.users[7].PassWord);
-        data8.setText("用户名:" + MainActivity.users[8].UserName + "  " + "手机号码:" + MainActivity.users[8].PhoneNumber + "   " + "电子邮箱" + MainActivity.users[8].EmailAddress + "    " + "密码:" + MainActivity.users[8].PassWord);
-        data9.setText("用户名:" + MainActivity.users[9].UserName + "  " + "手机号码:" + MainActivity.users[9].PhoneNumber + "   " + "电子邮箱" + MainActivity.users[9].EmailAddress + "    " + "密码:" + MainActivity.users[9].PassWord);
-        data10.setText("用户名:" + MainActivity.users[10].UserName + "  " + "手机号码:" + MainActivity.users[10].PhoneNumber + "   " + "电子邮箱" + MainActivity.users[10].EmailAddress + "    " + "密码:" + MainActivity.users[10].PassWord);
+        data0.setText("用户名:" + Manager.users[0].UserName + "  " + "手机号码:" + Manager.users[0].PhoneNumber + "   " + "电子邮箱" + Manager.users[0].EmailAddress + "    " + "密码:" + Manager.users[0].PassWord);
+        data1.setText("用户名:" + Manager.users[1].UserName + "  " + "手机号码:" + Manager.users[1].PhoneNumber + "   " + "电子邮箱" + Manager.users[1].EmailAddress + "    " + "密码:" + Manager.users[1].PassWord);
+        data2.setText("用户名:" + Manager.users[2].UserName + "  " + "手机号码:" + Manager.users[2].PhoneNumber + "   " + "电子邮箱" + Manager.users[2].EmailAddress + "    " + "密码:" + Manager.users[2].PassWord);
+        data3.setText("用户名:" + Manager.users[3].UserName + "  " + "手机号码:" + Manager.users[3].PhoneNumber + "   " + "电子邮箱" + Manager.users[3].EmailAddress + "    " + "密码:" + Manager.users[3].PassWord);
+        data4.setText("用户名:" + Manager.users[4].UserName + "  " + "手机号码:" + Manager.users[4].PhoneNumber + "   " + "电子邮箱" + Manager.users[4].EmailAddress + "    " + "密码:" + Manager.users[4].PassWord);
+        data5.setText("用户名:" + Manager.users[5].UserName + "  " + "手机号码:" + Manager.users[5].PhoneNumber + "   " + "电子邮箱" + Manager.users[5].EmailAddress + "    " + "密码:" + Manager.users[5].PassWord);
+        data6.setText("用户名:" + Manager.users[6].UserName + "  " + "手机号码:" + Manager.users[6].PhoneNumber + "   " + "电子邮箱" + Manager.users[6].EmailAddress + "    " + "密码:" + Manager.users[6].PassWord);
+        data7.setText("用户名:" + Manager.users[7].UserName + "  " + "手机号码:" + Manager.users[7].PhoneNumber + "   " + "电子邮箱" + Manager.users[7].EmailAddress + "    " + "密码:" + Manager.users[7].PassWord);
+        data8.setText("用户名:" + Manager.users[8].UserName + "  " + "手机号码:" + Manager.users[8].PhoneNumber + "   " + "电子邮箱" + Manager.users[8].EmailAddress + "    " + "密码:" + Manager.users[8].PassWord);
+        data9.setText("用户名:" + Manager.users[9].UserName + "  " + "手机号码:" + Manager.users[9].PhoneNumber + "   " + "电子邮箱" + Manager.users[9].EmailAddress + "    " + "密码:" + Manager.users[9].PassWord);
+        data10.setText("用户名:" + Manager.users[10].UserName + "  " + "手机号码:" + Manager.users[10].PhoneNumber + "   " + "电子邮箱" + Manager.users[10].EmailAddress + "    " + "密码:" + Manager.users[10].PassWord);
     }
     private void ButtonClicked(View v) {
-        Intent intent = new Intent(Root.this,MainActivity.class);
+        Intent intent = new Intent(Root.this,Manager.class);
         startActivity(intent);
     }
 }

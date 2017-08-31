@@ -69,11 +69,11 @@ public class ResetPassWord extends AppCompatActivity {
             return;
         }
         for (i= 0;i <= 10;i++) {
-            if (MainActivity.users[i].isthis("UN",UserName) == true) {
+            if (Manager.users[i].isthis("UN",UserName) == true) {
                 break;
             }
         }
-        if (MainActivity.users[i].ResetPassWord(UserName,PhoneNumber,EmailAddress,PassWord) == false) {
+        if (Manager.users[i].ResetPassWord(UserName,PhoneNumber,EmailAddress,PassWord) == false) {
             Toast.makeText(this, "验证信息错误", Toast.LENGTH_SHORT).show();
             return;
         }

@@ -92,10 +92,10 @@ public class Register extends AppCompatActivity {
             return;
         }
         for (UserNumber = 0;UserNumber <= 10;UserNumber ++) {
-            if (MainActivity.users[UserNumber].CheckOccu() == true) {
+            if (Manager.users[UserNumber].CheckOccu() == true) {
                 break;
             }
         }
-        MainActivity.users[UserNumber].setData(UserName,PhoneNumber,EmailAddress,PassWord);
+        Manager.users[UserNumber].setData(UserName,PhoneNumber,EmailAddress,PassWord);
     }
 }
