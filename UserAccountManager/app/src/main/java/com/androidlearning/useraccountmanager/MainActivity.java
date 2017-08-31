@@ -20,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Manager.Initialzation();
         BuildControl();
         setOnClickListener();
-        Manager.Initialzation();
     }
     private void BuildControl() {
         LogInUserName = (EditText) findViewById(R.id.LogInUserName);
