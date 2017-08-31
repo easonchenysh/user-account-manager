@@ -57,8 +57,6 @@ public class Users {
         }
         if (right && Password.equals(PassWord)) {
            right = true;
-        } else {
-            right = false;
         }
         return right;
     }

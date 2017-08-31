@@ -63,7 +63,7 @@ public class Root extends AppCompatActivity {
         data10.setText("用户名:" + Manager.users[10].UserName + "  " + "手机号码:" + Manager.users[10].PhoneNumber + "   " + "电子邮箱" + Manager.users[10].EmailAddress + "    " + "密码:" + Manager.users[10].PassWord);
     }
     private void ButtonClicked(View v) {
-        Intent intent = new Intent(Root.this,Manager.class);
+        Intent intent = new Intent(Root.this,MainActivity.class);
         startActivity(intent);
     }
 }

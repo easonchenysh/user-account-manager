@@ -72,29 +72,45 @@ public class Register extends AppCompatActivity {
         else {
             ok = true;
         }
-        if (!Pattern.matches(UserName,regUN)) {
+        if (!Pattern.matches(regUN,UserName)) {
             ok = false;
             Toast.makeText(this, "用户名中存在非法字符", Toast.LENGTH_SHORT).show();
         }
-        if (!Pattern.matches(PhoneNumber,regPN)) {
+        if (!Pattern.matches(regPN,PhoneNumber)) {
             ok = false;
             Toast.makeText(this, "手机号码格式错误", Toast.LENGTH_SHORT).show();
         }
-        if (!Pattern.matches(EmailAddress,regEA)) {
+        if (!Pattern.matches(regEA,EmailAddress)) {
             ok = false;
             Toast.makeText(this, "邮箱格式错误", Toast.LENGTH_SHORT).show();
         }
-        if (!Pattern.matches(PassWord,regPW)) {
+        if (!Pattern.matches(regPW,PassWord)) {
             ok = false;
             Toast.makeText(this, "密码格式错误", Toast.LENGTH_SHORT).show();
+        }
+        for (UserNumber = 0;UserNumber <= 10;UserNumber ++) { //防止重复注册机制
+            if (Manager.users[UserNumber].UserName.equals(UserName)) {
+                Toast.makeText(this, "用户名已注册", Toast.LENGTH_SHORT).show();
+                ok = false;
+            }
+            if (Manager.users[UserNumber].PhoneNumber.equals(PhoneNumber)) {
+                Toast.makeText(this, "手机号码已注册", Toast.LENGTH_SHORT).show();
+                ok = false;
+            }
+            if (Manager.users[UserNumber].EmailAddress.equals(EmailAddress)) {
+                Toast.makeText(this, "邮箱已注册", Toast.LENGTH_SHORT).show();
+                ok = false;
+            }
+            if (Manager.users[UserNumber].CheckOccu()) {
+                break;
+            }
         }
         if (!ok) {
             return;
         }
-        for (UserNumber = 0;UserNumber <= 10;UserNumber ++) {
-            if (Manager.users[UserNumber].CheckOccu()) {
-                break;
-            }
+        if (UserNumber == 11) {
+            Toast.makeText(this, "用户已满", Toast.LENGTH_SHORT).show();
+            return;
         }
         Manager.users[UserNumber-1].setData(UserName,PhoneNumber,EmailAddress,PassWord);
     }
