@@ -12,7 +12,7 @@ public class Manager {
             users[0].UserName = "root";
             users[0].PhoneNumber = "18888888888";
             users[0].EmailAddress = "root@users.com";
-            users[0].PassWord = "012345678901";
+            users[0].PassWord = "000000000000";//12个0
         }
     }
 }
