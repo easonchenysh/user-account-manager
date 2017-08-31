@@ -7,14 +7,14 @@ public class Users {
     String PassWord = "";
     public boolean CheckOccu() {
         boolean Occu;
-        Occu = UserName == "";
-        if (PhoneNumber == "") {
+        Occu = UserName.equals("");
+        if (PhoneNumber.equals("")) {
             Occu = false;
         }
-        if (EmailAddress == "") {
+        if (EmailAddress.equals("")) {
             Occu = false;
         }
-        if (PassWord == "") {
+        if (PassWord.equals("")) {
             Occu = false;
         }
         return Occu;
@@ -27,44 +27,44 @@ public class Users {
     }
     public boolean ResetPassWord (String UN,String PN,String EA,String PW) {
         boolean correct;
-        if (UserName == UN) {
+        if (UserName.equals(UN)) {
             correct = true;
         }
         else {
             correct = false;
         }
-        if (PhoneNumber != PN) {
+        if (!PhoneNumber.equals(PN)) {
             correct = false;
         }
-        if (EmailAddress != EA) {
+        if (!EmailAddress.equals(EA)) {
             correct = false;
         }
-        if (correct == true) {
+        if (correct) {
             PassWord = PW;
         }
         return correct;
     }
     public boolean LogIn(String type,String data,String Password) {
         boolean right = false;
-        if (type == "UN") {
-            if (data == UserName) {
+        if (type.equals("UN")) {
+            if (!data.equals(UserName)) {
                 right = true;
             }
             else {
                 right = false;
             }
         }
-        if (type == "PN") {
-            if (data != PhoneNumber) {
+        if (type.equals("PN")) {
+            if (!data.equals(PhoneNumber)) {
                 right = false;
             }
         }
-        if (type == "EA") {
-            if (data != UserName) {
+        if (type.equals("EA")) {
+            if (!data.equals(EmailAddress)) {
                right = false;
             }
         }
-        if (Password != PassWord) {
+        if (Password.equals(PassWord)) {
            right = false;
         }
         return right;
@@ -73,7 +73,7 @@ public class Users {
         boolean temp = false;
         switch (type) {
             case "UN":{
-                if (data == UserName) {
+                if (data.equals(UserName)) {
                     temp = true;
                 }
                 else {
@@ -82,7 +82,7 @@ public class Users {
                 break;
             }
             case "PN":{
-                if (data == PhoneNumber) {
+                if (data.equals(PhoneNumber)) {
                     temp = true;
                 }
                 else {
@@ -91,7 +91,7 @@ public class Users {
                 break;
             }
             case "EA":{
-                if (data == EmailAddress) {
+                if (data.equals(EmailAddress)) {
                     temp = true;
                 }
                 else {

@@ -29,7 +29,7 @@ public class Show extends AppCompatActivity {
         });
     }
     private void showTime() {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日  HH:mm:ss");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd  HH:mm:ss");
         String DT = formatter.format(new Date());
         ShowTime.setText("登录时间:" + DT);
     }

@@ -64,16 +64,16 @@ public class ResetPassWord extends AppCompatActivity {
         String PassWord = ResetPassWordPassWord.getText().toString();
         String regPW = "^\\w{7-11}$";
         int i;
-        if (Pattern.matches(PassWord,regPW) == false){
+        if (!Pattern.matches(PassWord,regPW)){
             Toast.makeText(this, "密码格式错误", Toast.LENGTH_SHORT).show();
             return;
         }
         for (i= 0;i <= 10;i++) {
-            if (Manager.users[i].isthis("UN",UserName) == true) {
+            if (Manager.users[i].isthis("UN",UserName)) {
                 break;
             }
         }
-        if (Manager.users[i].ResetPassWord(UserName,PhoneNumber,EmailAddress,PassWord) == false) {
+        if (!Manager.users[i].ResetPassWord(UserName,PhoneNumber,EmailAddress,PassWord)) {
             Toast.makeText(this, "验证信息错误", Toast.LENGTH_SHORT).show();
             return;
         }

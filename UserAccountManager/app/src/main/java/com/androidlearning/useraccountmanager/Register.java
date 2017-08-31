@@ -65,37 +65,37 @@ public class Register extends AppCompatActivity {
         String regPW = "^.{7-11}$";
         boolean ok;
         int UserNumber;
-        if (UserName == "") {
+        if (UserName.equals("")) {
             Toast.makeText(this, "用户名不能为空", Toast.LENGTH_SHORT).show();
             ok = false;
         }
         else {
             ok = true;
         }
-        if (Pattern.matches(UserName,regUN) == false) {
+        if (!Pattern.matches(UserName,regUN)) {
             ok = false;
             Toast.makeText(this, "用户名中存在非法字符", Toast.LENGTH_SHORT).show();
         }
-        if (Pattern.matches(PhoneNumber,regPN) == false) {
+        if (!Pattern.matches(PhoneNumber,regPN)) {
             ok = false;
             Toast.makeText(this, "手机号码格式错误", Toast.LENGTH_SHORT).show();
         }
-        if (Pattern.matches(EmailAddress,regEA) == false) {
+        if (!Pattern.matches(EmailAddress,regEA)) {
             ok = false;
             Toast.makeText(this, "邮箱格式错误", Toast.LENGTH_SHORT).show();
         }
-        if (Pattern.matches(PassWord,regPW) == false) {
+        if (!Pattern.matches(PassWord,regPW)) {
             ok = false;
             Toast.makeText(this, "密码格式错误", Toast.LENGTH_SHORT).show();
         }
-        if (ok == false) {
+        if (!ok) {
             return;
         }
         for (UserNumber = 0;UserNumber <= 10;UserNumber ++) {
-            if (Manager.users[UserNumber].CheckOccu() == true) {
+            if (Manager.users[UserNumber].CheckOccu()) {
                 break;
             }
         }
-        Manager.users[UserNumber].setData(UserName,PhoneNumber,EmailAddress,PassWord);
+        Manager.users[UserNumber-1].setData(UserName,PhoneNumber,EmailAddress,PassWord);
     }
 }

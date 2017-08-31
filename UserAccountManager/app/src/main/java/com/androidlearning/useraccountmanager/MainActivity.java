@@ -71,16 +71,22 @@ public class MainActivity extends AppCompatActivity {
         String Type;
         String regPN = "^1[3|4|5|7|8][0-9]{9}$";
         String regEA = "^[a-zA-Z_]{1,}[0-9]{0,}@(([a-zA-z0-9]-*){1,}\\.){1,3}[a-zA-z\\-]{1,}$";
-        if (UserName == "") {
+        boolean ok = true;
+        if (UserName.equals("")) {
             Toast.makeText(this, "用户名不能为空", Toast.LENGTH_SHORT).show();
+            ok = false;
         }
-        if (PassWord == "") {
+        if (PassWord.equals("")) {
             Toast.makeText(this, "密码不能为空", Toast.LENGTH_SHORT).show();
+            ok = false;
         }
-        if (Pattern.matches(UserName,regPN) == true) {
+        if (!ok) {
+            return;
+        }
+        if (Pattern.matches(UserName,regPN)) {
             Type = "PN";
         }
-        else if (Pattern.matches(UserName,regEA) == true) {
+        else if (Pattern.matches(UserName,regEA)) {
             Type = "EA";
         }
         else {
@@ -88,11 +94,15 @@ public class MainActivity extends AppCompatActivity {
 //            UN不是UnKnow,而是UserName
         }
         for (i = 0;i <= 10;i++) {
-            if (Manager.users[i].isthis(Type,UserName) == true) {
+            if (Manager.users[i].isthis(Type,UserName)) {
                 break;
             }
         }
-        if (Manager.users[i].LogIn(Type,UserName,PassWord) == true) {
+        if (i == 11) {
+            Toast.makeText(this, "用户不存在", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (Manager.users[i].LogIn(Type,UserName,PassWord)) {
             if (i == 0) {
                 Intent intent = new Intent(MainActivity.this,Root.class);
                 startActivity(intent);
