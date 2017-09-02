@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import java.util.regex.Pattern;
 
 public class Register extends AppCompatActivity {
@@ -57,10 +56,6 @@ public class Register extends AppCompatActivity {
         String PhoneNumber = RegisterPhoneNumber.getText().toString();
         String EmailAddress = RegisterEmailAddress.getText().toString();
         String PassWord = RegisterPassWord.getText().toString();
-        String regUN = "^[a-zA-Z0-9_-]*$";
-        String regPN = "^1[3|4|5|7|8][0-9]{9}$";
-        String regEA = "^[a-zA-Z_]{1,}[0-9]{0,}@(([a-zA-z0-9]-*){1,}\\.){1,3}[a-zA-z\\-]{1,}$";
-        String regPW = "^[a-zA-Z0-9_-]{7,11}$";
         boolean ok;
         int UserNumber;
         if (UserName.equals("")) {
@@ -70,19 +65,19 @@ public class Register extends AppCompatActivity {
         else {
             ok = true;
         }
-        if (!Pattern.matches(regUN,UserName)) {
+        if (!Pattern.matches(Manager.regUN,UserName)) {
             ok = false;
             Toast.makeText(this, "用户名中存在非法字符", Toast.LENGTH_SHORT).show();
         }
-        if (!Pattern.matches(regPN,PhoneNumber)) {
+        if (!Pattern.matches(Manager.regPN,PhoneNumber)) {
             ok = false;
             Toast.makeText(this, "手机号码格式错误", Toast.LENGTH_SHORT).show();
         }
-        if (!Pattern.matches(regEA,EmailAddress)) {
+        if (!Pattern.matches(Manager.regEA,EmailAddress)) {
             ok = false;
             Toast.makeText(this, "邮箱格式错误", Toast.LENGTH_SHORT).show();
         }
-        if (!Pattern.matches(regPW,PassWord)) {
+        if (!Pattern.matches(Manager.regPW,PassWord)) {
             ok = false;
             Toast.makeText(this, "密码格式错误", Toast.LENGTH_SHORT).show();
         }

@@ -5,8 +5,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import java.util.Date;
-import java.text.SimpleDateFormat;//由于对应Android库的api版本是26，这个的api是14，所以import了相应的Java库进行代替
-
+import java.text.SimpleDateFormat;
+//由于SimpleDateFormat对应Android库的api版本是26，这个程序的api是14，所以import了相应的Java库进行代替
 public class Show extends AppCompatActivity {
     private TextView ShowTime;
     private Button ShowBack;

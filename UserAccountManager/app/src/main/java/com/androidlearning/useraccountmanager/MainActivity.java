@@ -63,8 +63,6 @@ public class MainActivity extends AppCompatActivity {
         String UserName = LogInUserName.getText().toString();
         String PassWord = LogInPassWord.getText().toString();
         String Type;
-        String regPN = "^1[3|4|5|7|8][0-9]{9}$";
-        String regEA = "^[a-zA-Z_]{1,}[0-9]{0,}@(([a-zA-z0-9]-*){1,}\\.){1,3}[a-zA-z\\-]{1,}$";
         boolean ok = true;
         if (UserName.equals("")) {
             Toast.makeText(this, "用户名不能为空", Toast.LENGTH_SHORT).show();
@@ -77,10 +75,10 @@ public class MainActivity extends AppCompatActivity {
         if (!ok) {
             return;
         }
-        if (Pattern.matches(regPN, UserName)) {
+        if (Pattern.matches(Manager.regPN, UserName)) {
             Type = "PN";
         }
-        else if (Pattern.matches(regEA, UserName)) {
+        else if (Pattern.matches(Manager.regEA, UserName)) {
             Type = "EA";
         }
         else {

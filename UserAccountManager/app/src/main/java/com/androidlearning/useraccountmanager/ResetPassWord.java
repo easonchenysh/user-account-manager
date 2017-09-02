@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import java.util.regex.Pattern;
 
 public class ResetPassWord extends AppCompatActivity {
@@ -60,9 +59,8 @@ public class ResetPassWord extends AppCompatActivity {
         String PhoneNumber = ResetPassWordPhoneNumber.getText().toString();
         String EmailAddress = ResetPassWordEmailAddress.getText().toString();
         String PassWord = ResetPassWordPassWord.getText().toString();
-        String regPW = "^[a-zA-Z0-9_-]*$";
         int i;
-        if (!Pattern.matches(regPW,PassWord)){
+        if (!Pattern.matches(Manager.regPW,PassWord)){
             Toast.makeText(this, "密码格式错误", Toast.LENGTH_SHORT).show();
             return;
         }
