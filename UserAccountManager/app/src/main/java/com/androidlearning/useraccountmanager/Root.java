@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Root extends AppCompatActivity {
+    private TextView RootShowDate;
     private TextView data0;
     private TextView data1;
     private TextView data2;
@@ -24,9 +25,11 @@ public class Root extends AppCompatActivity {
         setContentView(R.layout.activity_root);
         BuildControl();
         setOnClickListener();
+        ShowDate();
         ShowData();
     }
     private void BuildControl() {
+        RootShowDate = (TextView) findViewById(R.id.RootShowDate);
         data0 = (TextView) findViewById(R.id.data0);
         data1 = (TextView) findViewById(R.id.data1);
         data2 = (TextView) findViewById(R.id.data2);
@@ -63,5 +66,8 @@ public class Root extends AppCompatActivity {
     }
     private void ButtonClicked(View v) {
         finish();
+    }
+    private void ShowDate() {
+        RootShowDate.setText("登录时间:" + Manager.getData());
     }
 }

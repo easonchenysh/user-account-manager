@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import java.util.Date;
 
 public class Show extends AppCompatActivity {
     private TextView ShowTime;
@@ -27,7 +26,7 @@ public class Show extends AppCompatActivity {
         });
     }
     private void showTime() {
-        ShowTime.setText("登录时间:" + Manager.dataFormat.format(new Date()));
+        ShowTime.setText("登录时间:" + Manager.getData());
     }
     private void ButtonClicked(View v) {
         finish();
