@@ -5,8 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import java.util.Date;
-import java.text.SimpleDateFormat;
-//由于SimpleDateFormat对应Android库的api版本是26，这个程序的api是14，所以import了相应的Java库进行代替
+
 public class Show extends AppCompatActivity {
     private TextView ShowTime;
     private Button ShowBack;
@@ -28,9 +27,7 @@ public class Show extends AppCompatActivity {
         });
     }
     private void showTime() {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd  HH:mm:ss");
-        String DT = formatter.format(new Date());
-        ShowTime.setText("登录时间:" + DT);
+        ShowTime.setText("登录时间:" + Manager.dataFormat.format(new Date()));
     }
     private void ButtonClicked(View v) {
         finish();

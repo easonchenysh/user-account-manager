@@ -1,5 +1,6 @@
 package com.androidlearning.useraccountmanager;
-
+import java.text.SimpleDateFormat;
+//由于SimpleDateFormat对应Android库的api版本是26，这个程序的api是14，所以import了相应的Java库进行代替
 public class Manager {
     public static Users users[] = new Users[11];
     public static boolean isInitialization = false;
@@ -7,6 +8,7 @@ public class Manager {
     public static String regPN = "^1[3|4|5|7|8][0-9]{9}$";
     public static String regEA = "^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$";
     public static String regPW = "^[a-zA-Z0-9_-]{7,11}$";
+    public static SimpleDateFormat dataFormat = new SimpleDateFormat("yyyy-MM-dd   HH:mm:ss");
     public static void Initialzation() {
         if (!isInitialization) {
             for (int i = 0;i <= 10;i++) {
